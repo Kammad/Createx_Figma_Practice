@@ -46,6 +46,10 @@ html, body {
   height: 100%;
 }
 
+.burger {
+  display: none;
+}
+
 .button {
   display: inline-block;
   background: linear-gradient(90deg, #FF3F3A 0%, #F75E05 100%);
@@ -1669,5 +1673,114 @@ html, body {
 /* ======================= MEDIA ====================== */
 
 @media (max-width: 1100px) {
+  .burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 150;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0px 0px 4px 2px #5c606a50;
+    transition: all .3s;
+  }
 
+  .burger--open {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .burger span {
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: #424551;
+    border-radius: 3px;
+    margin: 4px 0 4px 0;
+  }
+
+  .burger::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: #424551;
+    border-radius: 3px;
+  }
+
+  .burger::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: #424551;
+    border-radius: 3px;
+  }
+
+  .header {
+    padding-top: 92px;
+  }
+
+  .header__top {
+    min-width: 320px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: all .3s;
+  }
+
+  .header__top--open {
+    transform: translate(0%);
+  }
+
+  .header__top-inner {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 100px 0;
+  }
+
+  .header__logo {
+    margin: 0;
+  }
+
+  .header__nav {
+    margin: 0;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .header__nav-item {
+    margin: 0;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 30px;
+  }
+
+  .header__btn-box {
+    flex-direction: column-reverse;
+  }
+
+  .header__top-btn {
+    margin: 0;
+  }
+
+  .header__user {
+    margin-bottom: 30px;
+  }
 }
